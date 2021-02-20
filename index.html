@@ -6,40 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Lobster+Two:ital,wght@0,700;1,700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="styles.css">
     <title>Flavour Town</title>
 </head>
 
 <body>
     <header>
-        <div class="neon-sign">
-            <h1><span class="fast-flicker">F</span>lavor To<span class="flicker">w</span>n</h1>
+        <div class="wrapper">
+            <!-- <div class="neon-sign">
+                <h1><span class="fast-flicker">F</span>lavor To<span class="flicker">w</span>n</h1>
+            </div> -->
+            <div class="headerContainer">
+                <h1>Flavour Town</h1>
+                <h2>Tagline</h2>
+                <div class="button">
+                    <a href="#">Take me to flavour town</a>
+                </div>
+            </div>
         </div>
-        <h2>Tagline</h2>
-        <a href="#">Take me to flavour town</a>
     </header>
 
-    <section>
-        <form action="">
-            <label for="flavours">Select your flavour</label>
-            <select id="flavours" name="flavours">
-                <option value="orange">Orange</option>
-                <option value="spicy">Spicy</option>
-                <option value="fruity">Fruity</option>
-                <option value="floral">Floral</option>
-                <option value="sweet">Sweet</option>
-            </select>
-            <button type="submit">Something clever that will come eventually</button>
-        </form>
+    <section class="formSection">
+        <div class="wrapper">
+            <form action="">
+                <label for="flavours">Select your flavour</label>
+                <select id="flavours" name="flavours">
+                    <option value="orange">Orange</option>
+                    <option value="spicy">Spicy</option>
+                    <option value="fruity">Fruity</option>
+                    <option value="floral">Floral</option>
+                    <option value="sweet">Sweet</option>
+                </select>
+                <button type="submit">Something clever that will come eventually</button>
+            </form>
+        </div>
+    </section>
 
-        <ul class="gallery">
-            <!-- API results here -->
-        </ul>
+    <section class="resultSection">
+        <div class="wrapper">
+            <ul class="gallery">
+                <!-- API results here -->
+            </ul>
+        </div>
     </section>
 
     <footer>
-        <p>Created at <a href="https://www.junocollege.com">Juno College</a></p>
+        <div class="wrapper">
+            <p>Created at <a href="https://www.junocollege.com">Juno College</a></p>
+        </div>
     </footer>
 
     <script src="scripts.js"></script>

@@ -8,11 +8,135 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
-.neon-sign {
+/* GENERAL STYLES */
+
+html {
+    font-size: 62.5%;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Lobster Two', cursive;
+    margin: 0;
+}
+
+h1 {
+    font-size: 7rem;
+    color: white;
+    text-shadow: 5px 3px  #3C1642;
+}
+
+h2 {
+    font-size: 3rem;
+    color: white;
+    margin: 40px 0;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+
+body {
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.8rem;
+}
+
+/* HEADER STYLES */
+
+header {
+    height: 100vh;
+    background-color: #679436;
+}
+
+.headerContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.button {
+    margin-top: 40px;
+}
+
+.headerContainer a {
+    background-color: #3C1642;
+    border-radius: 5px;
+    border: solid 5px transparent;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 8px;
+}
+
+
+.headerContainer a:hover,
+.headerContainer a:focus {
+    background-color: #F9F0FA;
+    color: #3C1642;
+    border: solid 5px #3C1642;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .neon-sign {
     text-shadow: 0 0 0.6rem #b2ff9e, 0 0 1.5rem #1dd3b0, -0.2rem 0.1rem 1rem #1dd3b0, 0.2rem 0.1rem 1rem #1dd3b0, 0 -0.5rem 2rem #086375, 0 0.5rem 3rem #086375;
     animation: shine 2s forwards, flicker 3s infinite;
 
-}
+} */
 
 /* h1 {
     font-size: 9rem;
