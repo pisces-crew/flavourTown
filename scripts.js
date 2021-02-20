@@ -11,7 +11,7 @@
 const flavourTown = {};
 
 // Save API info
-flavourTown.apiUrl = 'https://strainapi.evanbusse.com/rpCJEMW/strains/search/flavor/FLAVOR';
+flavourTown.apiUrl = `https://strainapi.evanbusse.com/rpCJEMW/strains/search/flavor/${flavourTown.flavour}`;
 
 // Create method to request info from API
 flavourTown.getFlavours = () => {
@@ -26,5 +26,24 @@ flavourTown.getFlavours = () => {
             });
 };
 
-// Call the getFlavours method
-flavourTown.getFlavours();
+flavourTown.getSelectedValue = () => {
+    flavourTown.flavour = document.querySelector('option').value
+
+    // const flavour = queen.seasons[0].id;
+    console.log(flavourTown.flavour);
+}
+
+flavourTown.getFlavours(flavourTown.flavour);
+
+// flavourTown.displayFlavour = () => {
+//     // const flavour = 
+// }
+
+
+flavourTown.init = () => {
+    // Call the getFlavours method
+    flavourTown.getFlavours();
+    flavourTown.getSelectedValue();
+};
+
+flavourTown.init();
