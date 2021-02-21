@@ -51,6 +51,7 @@ h4 {
 body {
     font-family: 'Cabin', sans-serif;
     font-size: 1.8rem;
+    color: #333333;
 }
 
 /* HEADER STYLES */
@@ -72,7 +73,8 @@ header {
     margin-top: 40px;
 }
 
-.headerContainer a {
+.headerContainer a,
+button {
     background-color: #3C1642;
     border-radius: 5px;
     border: solid 5px transparent;
@@ -84,11 +86,58 @@ header {
 
 
 .headerContainer a:hover,
-.headerContainer a:focus {
+.headerContainer a:focus,
+button:hover,
+button:focus {
     background-color: #F9F0FA;
     color: #3C1642;
     border: solid 5px #3C1642;
 }
+
+/* FORM STYLES */
+section {
+    padding: 5rem 0;
+}
+
+.flavourForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flavourForm div {
+    margin: 15px 0;
+}
+
+select {
+    padding: 10px 20px;
+}
+
+/* RESULT SECTION STYLES */
+
+.resultSection {
+    display: none;
+}
+
+/* FOOTER STYLES */
+
+footer {
+    background-color: #62246B;
+    text-align: center;
+    color: white;
+    padding: 1rem 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+
+
+
+
+
 
 
 

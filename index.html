@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Lobster+Two:ital,wght@0,700;1,700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Lobster+Two:ital,wght@0,700;1,700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="styles.css">
     <title>Flavour Town</title>
 </head>
@@ -21,24 +21,31 @@
                 <h1>Flavour Town</h1>
                 <h2>Tagline</h2>
                 <div class="button">
-                    <a href="#">Take me to flavour town</a>
+                    <a href="#formSection">Take me to flavour town</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="formSection">
+    <section class="formSection" id="formSection">
         <div class="wrapper">
-            <form action="">
-                <label for="flavours">Select your flavour</label>
-                <select id="flavours" name="flavours">
-                    <option value="orange">Orange</option>
-                    <option value="spicy">Spicy</option>
-                    <option value="fruity">Fruity</option>
-                    <option value="floral">Floral</option>
-                    <option value="sweet">Sweet</option>
-                </select>
-                <button type="submit">Something clever that will come eventually</button>
+            <form class="flavourForm" action="">
+                <div>
+                    <label for="flavours"><h3>Select your flavour</h3></label>
+                </div>
+                <div>
+                    <select id="flavours" name="flavours">
+                        <option value="orange">Orange</option>
+                        <option value="spicy">Spicy</option>
+                        <option value="fruity">Fruity</option>
+                        <option value="floral">Floral</option>
+                        <option value="sweet">Sweet</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit">Something</button>
+                </div>
+
             </form>
         </div>
     </section>
