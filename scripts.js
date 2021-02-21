@@ -10,23 +10,24 @@
 // Create app object
 const flavourTown = {};
 
-// Save API info
-flavourTown.apiUrl = `https://strainapi.evanbusse.com/rpCJEMW/strains/search/flavor/sweet`;
-
 // Create method to request info from API
-flavourTown.getStrains = () => {
+flavourTown.getStrains = (flavour) => {
+    flavourTown.apiUrl = `https://strainapi.evanbusse.com/rpCJEMW/strains/search/flavor/${flavour}`;
     fetch(flavourTown.apiUrl)
         .then((response) => {
             return response.json();
         })
             .then((jsonResponse) => {
-                console.log(jsonResponse);
+                flavourTown.displayStrains(jsonResponse);
             });
 };
 
 // Create method to loop through strains and filter based on flavour property
-flavourTown.displayStrains = () => {
-}
+flavourTown.displayStrains = (jsonResults) => {
+    jsonResults.forEach(item => {
+        console.log(`${item.name}, ${item.race}`);
+    });
+};
 
 // Get the user choice from the dropdown menu
 flavourTown.getSelectedValue = () => {
@@ -34,16 +35,11 @@ flavourTown.getSelectedValue = () => {
     const selection = document.getElementById('flavours');
     form.addEventListener('submit', function(event){
         event.preventDefault();
-        console.log(selection.value);
-        return selection.value;
+        flavourTown.getStrains(selection.value);
     });
 };
 
-// const matchingFlavours = dataFromApi.filter((result) => {
-//     return result.flavors === selection.value;
-
 flavourTown.init = () => {
-    flavourTown.getStrains();
     flavourTown.getSelectedValue();
 };
 
