@@ -7,10 +7,10 @@
 // Display the recommended strain results from the API on the page by manipulating the DOM - include the strain name, description, and a visual aspect (picture or GIF)
 // Listen for a 'click' event on a reset button
 
-// Create app object
+// App object
 const flavourTown = {};
 
-// Create method to request info from API
+// API call
 flavourTown.getStrains = (flavour) => {
     flavourTown.apiUrl = `https://strainapi.evanbusse.com/rpCJEMW/strains/search/flavor/${flavour}`;
     fetch(flavourTown.apiUrl)
@@ -22,10 +22,14 @@ flavourTown.getStrains = (flavour) => {
             });
 };
 
-// Create method to loop through strains and filter based on flavour property
+// Method to loop through strains and display on the page
 flavourTown.displayStrains = (jsonResults) => {
+    console.log(jsonResults.length);
     jsonResults.forEach(item => {
         console.log(`${item.name}, ${item.race}`);
+        // Get title and race and display on page
+        // Display hard-coded GIF relating to flavour
+        // Filter results down to 6-12 options
     });
 };
 
@@ -39,6 +43,7 @@ flavourTown.getSelectedValue = () => {
     });
 };
 
+// Inti function
 flavourTown.init = () => {
     flavourTown.getSelectedValue();
 };
