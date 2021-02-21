@@ -115,8 +115,10 @@ select {
 
 /* RESULT SECTION STYLES */
 
-.resultSection {
-    display: none;
+.resultSection h4,
+.resultSection p {
+    /* display: none; */
+    color: black;
 }
 
 /* FOOTER STYLES */
