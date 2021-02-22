@@ -1,12 +1,3 @@
-// A dropdown menu that allows the user to select a flavor of cannabis which has been pulled from the API
-// Listen for the user's click on the 'submit' button that will confirm their selection
-// Capture the value of the user's selection & store the user's selection in a variable
-// On submission, make an AJAX call to retrieve cannabis strains that match the user's selection 
-// Loop through the strains returned by the API 
-// Limit the return to maximum 5 strains
-// Display the recommended strain results from the API on the page by manipulating the DOM - include the strain name, description, and a visual aspect (picture or GIF)
-// Listen for a 'click' event on a reset button
-
 // App object
 const flavourTown = {};
 
@@ -24,31 +15,46 @@ flavourTown.getStrains = (flavour) => {
 
 // Method to loop through strains and display on the page
 flavourTown.displayStrains = (jsonResults) => {
-
     document.querySelector('ul').innerHTML = '';
-
-    const randomResults = jsonResults.sort((a,b) => 0.5 - Math.random());
-
+    const randomResults = jsonResults.sort(() => 0.5 - Math.random());
     const sliceResults = randomResults.slice(0,13);
-
     sliceResults.forEach(item => {
-        // console.log(`${item.name}, ${item.race}`);
         //create list element to store title & race
         const listEl = document.createElement('li');
-
         //create h4 to hold title 
         const strainTitle = document.createElement('h4');
-        strainTitle.textContent = item.name
-
+        strainTitle.textContent = item.name;
         //create p to hold race
         const race = document.createElement('p');
         race.textContent = item.race;
-
         document.querySelector('ul').appendChild(listEl);
         listEl.append(strainTitle, race);
-
     });
 };
+
+// // Make a second API call to get strain description
+// flavourTown.getDescriptions = (description) => {
+//     flavourTown.descriptionUrl = `https://strainapi.evanbusse.com/rpCJEMW/strains/search/name/${description}`;
+//     fetch(flavourTown.descriptionUrl)
+//         .then((response) => {
+//             return response.json();
+//         })
+//             .then((jsonResponse) => {
+//                 // console.log(jsonResponse);
+//                 flavourTown.displayDescription(jsonResponse);
+//             });
+// };
+
+// flavourTown.displayDescription = () => {
+//     // Create an event listener on the h4 to watch for click
+//     const selectedTitle = document.querySelectorAll('h4');
+//     selectedTitle.addEventListener('click', function() {
+//         // Capture the text of the selected h4
+//         console.log('clicked!');
+//     })
+//     // Use that value to query the new API for the correct description
+//     // flavourTown.getDescriptions();
+// };
 
 // Get the user choice from the dropdown menu
 flavourTown.getSelectedValue = () => {
@@ -85,9 +91,10 @@ flavourTown.getSelectedValue = () => {
     });
 };
 
-// Inti function
+// Initialize function
 flavourTown.init = () => {
     flavourTown.getSelectedValue();
+    // flavourTown.displayDescription();
 };
 
 flavourTown.init();
