@@ -24,8 +24,15 @@ flavourTown.getStrains = (flavour) => {
 
 // Method to loop through strains and display on the page
 flavourTown.displayStrains = (jsonResults) => {
-    jsonResults.forEach(item => {
-        console.log(`${item.name}, ${item.race}`);
+
+    document.querySelector('ul').innerHTML = '';
+
+    const randomResults = jsonResults.sort((a,b) => 0.5 - Math.random());
+
+    const sliceResults = randomResults.slice(0,13);
+
+    sliceResults.forEach(item => {
+        // console.log(`${item.name}, ${item.race}`);
         //create list element to store title & race
         const listEl = document.createElement('li');
 
@@ -38,11 +45,8 @@ flavourTown.displayStrains = (jsonResults) => {
         race.textContent = item.race;
 
         document.querySelector('ul').appendChild(listEl);
-        listEl.appendChild(strainTitle);
-        listEl.appendChild(race);
+        listEl.append(strainTitle, race);
 
-        // Filter results down to 6-12 options
-        // Clear html results 
     });
 };
 
@@ -73,10 +77,10 @@ flavourTown.getSelectedValue = () => {
             gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/xULW8tFJvm5JJYnZkc/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>` 
         }else if(selection.value === 'woody'){
             const gifHolder = document.querySelector('.gifHolder');
-            gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/sPj7I5949U2oo/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>` 
+            gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/l0HUbCY5FyDDTCire/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>` 
         }else if(selection.value === 'flowery'){
             const gifHolder = document.querySelector('.gifHolder');
-            gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/sPj7I5949U2oo/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>` 
+            gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/1n7cAiGBT299fcRg1r/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>` 
         }
     });
 };
