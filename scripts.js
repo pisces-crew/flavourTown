@@ -24,10 +24,6 @@ flavourTown.getStrains = (flavour) => {
 
 // Method to loop through strains and display on the page
 flavourTown.displayStrains = (jsonResults) => {
-    console.log(jsonResults.length);
-
-    // const ul = document.querySelector('ul');
-
     jsonResults.forEach(item => {
         console.log(`${item.name}, ${item.race}`);
         //create list element to store title & race
@@ -45,13 +41,9 @@ flavourTown.displayStrains = (jsonResults) => {
         listEl.appendChild(strainTitle);
         listEl.appendChild(race);
 
-
-
         // Filter results down to 6-12 options
         // Clear html results 
     });
-        // Display hard-coded GIF relating to flavour
-
 };
 
 // Get the user choice from the dropdown menu
@@ -60,35 +52,33 @@ flavourTown.getSelectedValue = () => {
     const selection = document.getElementById('flavours');
     form.addEventListener('submit', function(event){
         event.preventDefault();
-        
         flavourTown.getStrains(selection.value);
         if (selection.value === 'sweet'){
             const gifHolder = document.querySelector('.gifHolder');
-            gifHolder.innerHTML = `<iframe src="https://giphy.com/embed/1oKjCzdnatyyMxkdxF" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>`;
+            gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/sPj7I5949U2oo/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>`;
         }else if(selection.value === 'earthy'){
             const gifHolder = document.querySelector('.gifHolder');
-            gifHolder.innerHTML = `<iframe src="https://giphy.com/embed/1oKjCzdnatyyMxkdxF" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>` 
+            gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/RrU8f9lImvJja/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>` 
         }else if(selection.value === 'vanilla'){
             const gifHolder = document.querySelector('.gifHolder');
-            gifHolder.innerHTML = `<iframe src="https://giphy.com/embed/1oKjCzdnatyyMxkdxF" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>` 
+            gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/48QFl1W2eOzi8/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>` 
         }else if(selection.value === 'citrus'){
             const gifHolder = document.querySelector('.gifHolder');
-            gifHolder.innerHTML = `<iframe src="https://giphy.com/embed/1oKjCzdnatyyMxkdxF" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>` 
+            gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/zfnExdbtdTMmQ/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>` 
         }else if(selection.value === 'nutty'){
             const gifHolder = document.querySelector('.gifHolder');
-            gifHolder.innerHTML = `<iframe src="https://giphy.com/embed/1oKjCzdnatyyMxkdxF" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>` 
+            gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/zV9xqOc03a7Ju/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>` 
         }else if(selection.value === 'coffee'){
             const gifHolder = document.querySelector('.gifHolder');
-            gifHolder.innerHTML = `<iframe src="https://giphy.com/embed/1oKjCzdnatyyMxkdxF" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>` 
-        }else if(selection.value === `woody`){
+            gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/xULW8tFJvm5JJYnZkc/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>` 
+        }else if(selection.value === 'woody'){
             const gifHolder = document.querySelector('.gifHolder');
-            gifHolder.innerHTML = `<iframe src="https://giphy.com/embed/1oKjCzdnatyyMxkdxF" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>` 
+            gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/sPj7I5949U2oo/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>` 
         }else if(selection.value === 'flowery'){
             const gifHolder = document.querySelector('.gifHolder');
-            gifHolder.innerHTML = `<iframe src="https://giphy.com/embed/1oKjCzdnatyyMxkdxF" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>` 
+            gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/sPj7I5949U2oo/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>` 
         }
     });
-
 };
 
 // Inti function

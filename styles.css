@@ -30,7 +30,7 @@ h3 {
 h1 {
     font-size: 7rem;
     color: white;
-    text-shadow: 5px 3px  #3C1642;
+    text-shadow: 5px 3px #3C1642;
 }
 
 h2 {
@@ -45,8 +45,12 @@ h3 {
 
 h4 {
     font-size: 2rem;
+    margin: 0 0 10px 0;
 }
 
+p {
+    margin: 0;
+}
 
 body {
     font-family: 'Cabin', sans-serif;
@@ -115,10 +119,28 @@ select {
 
 /* RESULT SECTION STYLES */
 
-.resultSection h4,
-.resultSection p {
-    /* display: none; */
-    color: black;
+.gifHolder {
+    width: 100%;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #F9F0FA;
+    box-shadow: 6px 6px #3C1642;
+    border: 1px solid #3C1642;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 20px;
 }
 
 /* FOOTER STYLES */
