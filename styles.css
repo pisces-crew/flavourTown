@@ -141,6 +141,7 @@ ul li {
     text-align: center;
     text-transform: capitalize;
     padding: 20px;
+    cursor: pointer;
 }
 
 /* FOOTER STYLES */

@@ -32,30 +32,6 @@ flavourTown.displayStrains = (jsonResults) => {
     });
 };
 
-// // Make a second API call to get strain description
-// flavourTown.getDescriptions = (description) => {
-//     flavourTown.descriptionUrl = `https://strainapi.evanbusse.com/rpCJEMW/strains/search/name/${description}`;
-//     fetch(flavourTown.descriptionUrl)
-//         .then((response) => {
-//             return response.json();
-//         })
-//             .then((jsonResponse) => {
-//                 // console.log(jsonResponse);
-//                 flavourTown.displayDescription(jsonResponse);
-//             });
-// };
-
-// flavourTown.displayDescription = () => {
-//     // Create an event listener on the h4 to watch for click
-//     const selectedTitle = document.querySelectorAll('h4');
-//     selectedTitle.addEventListener('click', function() {
-//         // Capture the text of the selected h4
-//         console.log('clicked!');
-//     })
-//     // Use that value to query the new API for the correct description
-//     // flavourTown.getDescriptions();
-// };
-
 // Get the user choice from the dropdown menu
 flavourTown.getSelectedValue = () => {
     const form = document.querySelector('form');
@@ -91,10 +67,42 @@ flavourTown.getSelectedValue = () => {
     });
 };
 
+// Make a second API call to get strain description
+flavourTown.getDescriptions = (description) => {
+    flavourTown.descriptionUrl = `https://strainapi.evanbusse.com/rpCJEMW/strains/search/name/${description}`;
+    fetch(flavourTown.descriptionUrl)
+        .then((response) => {
+            return response.json();
+        })
+            .then((jsonResponse) => {
+                console.log(jsonResponse[0].desc);
+                // flavourTown.displayDescription(jsonResponse);
+            });
+};
+
+flavourTown.getClick = () => {
+    // Create an event listener on the ul (which exists on the page) to watch for click
+    const selectedTitle = document.querySelector('.strainGrid');
+    selectedTitle.addEventListener('click', function(event) {
+        // If statement - if clicking on li, h4, p - then get the text
+        // Use that value to query the new API for the correct description
+        if (event.target.tagName === 'LI') {
+            const liClick = event.target.childNodes[0].innerText;
+            flavourTown.getDescriptions(liClick);
+        } if (event.target.tagName === 'H4') {
+            const h4Click = event.target.innerText;
+            flavourTown.getDescriptions(h4Click);
+        } if (event.target.tagName === 'P') {
+            const pClick = event.target.parentNode.firstChild.innerText;
+            flavourTown.getDescriptions(pClick);
+        }        
+    })
+};
+
 // Initialize function
 flavourTown.init = () => {
     flavourTown.getSelectedValue();
-    // flavourTown.displayDescription();
+    flavourTown.getClick();
 };
 
 flavourTown.init();

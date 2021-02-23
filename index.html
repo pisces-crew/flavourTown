@@ -26,43 +26,52 @@
             </div>
         </div>
     </header>
+    <main>
+        <section class="formSection" id="formSection">
+            <div class="wrapper">
+                <form class="flavourForm" action="">
+                    <div>
+                        <label for="flavours"><h3>Select your flavour</h3></label>
+                    </div>
+                    <div>
+                        <select id="flavours" name="flavours">
+                            <option value="sweet">Sweet</option>
+                            <option value="earthy">Earthy</option>
+                            <option value="vanilla">Vanilla</option>
+                            <option value="citrus">Citrus</option>
+                            <option value="nutty">Nutty</option>
+                            <option value="coffee">Coffee</option>
+                            <option value="woody">Woody</option>
+                            <option value="flowery">Flowery</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="submit">Something</button>
+                    </div>
 
-    <section class="formSection" id="formSection">
-        <div class="wrapper">
-            <form class="flavourForm" action="">
-                <div>
-                    <label for="flavours"><h3>Select your flavour</h3></label>
-                </div>
-                <div>
-                    <select id="flavours" name="flavours">
-                        <option value="sweet">Sweet</option>
-                        <option value="earthy">Earthy</option>
-                        <option value="vanilla">Vanilla</option>
-                        <option value="citrus">Citrus</option>
-                        <option value="nutty">Nutty</option>
-                        <option value="coffee">Coffee</option>
-                        <option value="woody">Woody</option>
-                        <option value="flowery">Flowery</option>
-                    </select>
-                </div>
-                <div>
-                    <button type="submit">Something</button>
-                </div>
-
-            </form>
-        </div>
-    </section>
-
-    <section class="resultSection">
-        <div class="wrapper">
-            <div class="gifHolder">
-                <!-- JavaScript will add a GIF -->
+                </form>
             </div>
-            <ul>
-                <!-- API results here -->
-            </ul>
-        </div>
-    </section>
+        </section>
+
+        <section class="resultSection">
+            <div class="wrapper">
+                <div class="gifHolder">
+                    <!-- JavaScript will add a GIF -->
+                </div>
+                <ul class="strainGrid">
+                    <!-- API results here -->
+                </ul>
+            </div>
+        </section>
+
+        <section class="descSection">
+            <div class="wrapper">
+                <div class="descHolder">
+                    <!-- Description goes here -->
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="wrapper">
