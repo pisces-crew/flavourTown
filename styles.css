@@ -119,6 +119,15 @@ select {
 
 /* RESULT SECTION STYLES */
 
+.resultSection,
+.descSection {
+    display: none;
+}
+
+.showSection {
+    display: block;
+}
+
 .gifHolder {
     width: 100%;
 }
@@ -143,6 +152,7 @@ ul li {
     padding: 20px;
     cursor: pointer;
 }
+
 
 /* FOOTER STYLES */
 

@@ -10,7 +10,10 @@ flavourTown.getStrains = (flavour) => {
         })
             .then((jsonResponse) => {
                 flavourTown.displayStrains(jsonResponse);
-            });
+            }).catch (error => {
+                alert('Oops, we must be out smoking. Come back later!');
+                console.log(error);
+            })
 };
 
 // Method to loop through strains and display on the page
@@ -30,6 +33,9 @@ flavourTown.displayStrains = (jsonResults) => {
         document.querySelector('ul').appendChild(listEl);
         listEl.append(strainTitle, race);
     });
+    const clickInstructions = document.createElement('h3');
+    clickInstructions.textContent = 'Click the strain for more info'
+    document.querySelector('.instructions').appendChild(clickInstructions);
 };
 
 // Get the user choice from the dropdown menu
@@ -38,6 +44,7 @@ flavourTown.getSelectedValue = () => {
     const selection = document.getElementById('flavours');
     form.addEventListener('submit', function(event){
         event.preventDefault();
+        document.querySelector('.resultSection').classList.add('showSection');
         flavourTown.getStrains(selection.value);
         if (selection.value === 'sweet'){
             const gifHolder = document.querySelector('.gifHolder');
@@ -75,10 +82,25 @@ flavourTown.getDescriptions = (description) => {
             return response.json();
         })
             .then((jsonResponse) => {
-                console.log(jsonResponse[0].desc);
-                // flavourTown.displayDescription(jsonResponse);
-            });
+                // console.log(jsonResponse[0].desc);
+                flavourTown.displayDescription(jsonResponse[0].desc);
+            }).catch (error => {
+                alert('Oops, we must be out smoking. Come back later!');
+                console.log(error);
+            })
 };
+
+flavourTown.displayDescription = (clickResults) => {
+    document.querySelector('.descHolder').innerHTML = '';
+    document.querySelector('.descSection').classList.add('showSection');
+    const strainDesc = document.createElement('p');
+    strainDesc.textContent = clickResults;
+
+    if (strainDesc.textContent == ""){
+        strainDesc.textContent = `Oh No! No description available. Looks like you'll need to smoke it and find out`;
+    }
+    document.querySelector('.descHolder').appendChild(strainDesc);
+}
 
 flavourTown.getClick = () => {
     // Create an event listener on the ul (which exists on the page) to watch for click
