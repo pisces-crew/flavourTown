@@ -28,19 +28,20 @@ h3 {
 }
 
 h1 {
-    font-size: 7rem;
+    font-size: 14rem;
     color: white;
-    text-shadow: 5px 3px #3C1642;
+    text-shadow: 10px 10px #3C1642;
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 4rem;
     color: white;
     margin: 40px 0;
+    text-shadow: 2px 2px #3C1642;
 }
 
 h3 {
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
 h4 {
@@ -114,10 +115,23 @@ section {
 }
 
 select {
-    padding: 10px 20px;
+    font-family: 'Cabin', sans-serif;
+    padding: 15px 25px;
+    appearance: none;
+    border: 0;
+    border-bottom: 1px solid #333333;
+}
+
+select:hover {
+  background: #3C1642;
+  color: white;
 }
 
 /* RESULT SECTION STYLES */
+
+.resultSection {
+  padding: 0;
+}
 
 .resultSection,
 .descSection {
@@ -153,6 +167,36 @@ ul li {
     cursor: pointer;
 }
 
+li:hover,
+li:active,
+li:focus {
+    background-color: #3C1642;
+    color: white;
+    box-shadow: 6px 6px #333333;
+}
+
+.clicked {
+    background-color: #3C1642;
+    color: white;
+    box-shadow: 6px 6px #333333;
+}
+
+.instructions h3 {
+  margin: 40px 0;
+  text-align: center;
+}
+
+/* DESCRIPTION SECTION STYLES */
+
+.descSection {
+  padding-top: 0;
+}
+
+.descHolder {
+  width: 75%;
+  margin: auto;
+  text-align: justify;
+}
 
 /* FOOTER STYLES */
 

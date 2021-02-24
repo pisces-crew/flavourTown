@@ -21,7 +21,7 @@ flavourTown.displayStrains = (jsonResults) => {
     document.querySelector('ul').innerHTML = '';
     document.querySelector('.descHolder').innerHTML = '';
     const randomResults = jsonResults.sort(() => 0.5 - Math.random());
-    const sliceResults = randomResults.slice(0,13);
+    const sliceResults = randomResults.slice(0,15);
     sliceResults.forEach(item => {
         //create list element to store title & race
         const listEl = document.createElement('li');
@@ -121,8 +121,8 @@ flavourTown.getClick = () => {
         } if (event.target.tagName === 'P') {
             const pClick = event.target.parentNode.firstChild.innerText;
             flavourTown.getDescriptions(pClick);
-        }        
-    })
+        }
+      })
 };
 
 // Initialize function
