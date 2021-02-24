@@ -19,6 +19,7 @@ flavourTown.getStrains = (flavour) => {
 // Method to loop through strains and display on the page
 flavourTown.displayStrains = (jsonResults) => {
     document.querySelector('ul').innerHTML = '';
+    document.querySelector('.descHolder').innerHTML = '';
     const randomResults = jsonResults.sort(() => 0.5 - Math.random());
     const sliceResults = randomResults.slice(0,13);
     sliceResults.forEach(item => {
@@ -33,8 +34,9 @@ flavourTown.displayStrains = (jsonResults) => {
         document.querySelector('ul').appendChild(listEl);
         listEl.append(strainTitle, race);
     });
+    document.querySelector('.instructions').innerHTML = '';
     const clickInstructions = document.createElement('h3');
-    clickInstructions.textContent = 'Click the strain for more info'
+    clickInstructions.textContent = 'Click the strain for more info';
     document.querySelector('.instructions').appendChild(clickInstructions);
 };
 
@@ -90,6 +92,7 @@ flavourTown.getDescriptions = (description) => {
             })
 };
 
+// Function to display strain descriptions on page
 flavourTown.displayDescription = (clickResults) => {
     document.querySelector('.descHolder').innerHTML = '';
     document.querySelector('.descSection').classList.add('showSection');
@@ -102,6 +105,7 @@ flavourTown.displayDescription = (clickResults) => {
     document.querySelector('.descHolder').appendChild(strainDesc);
 }
 
+// Function to capture user click action on page
 flavourTown.getClick = () => {
     // Create an event listener on the ul (which exists on the page) to watch for click
     const selectedTitle = document.querySelector('.strainGrid');
@@ -127,4 +131,5 @@ flavourTown.init = () => {
     flavourTown.getClick();
 };
 
+// Run initialize function
 flavourTown.init();
