@@ -62,7 +62,7 @@ flavourTown.getSelectedValue = () => {
             gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/zfnExdbtdTMmQ/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>` 
         }else if(selection.value === 'nutty'){
             const gifHolder = document.querySelector('.gifHolder');
-            gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/zV9xqOc03a7Ju/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>` 
+            gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/zV9xqOc03a7Ju/giphy.gif'); height: 600px; background-size: cover; background-position: 50% 10%;"></div>` 
         }else if(selection.value === 'coffee'){
             const gifHolder = document.querySelector('.gifHolder');
             gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/xULW8tFJvm5JJYnZkc/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>` 
@@ -122,7 +122,7 @@ flavourTown.getClick = () => {
             const pClick = event.target.parentNode.firstChild.innerText;
             flavourTown.getDescriptions(pClick);
         }
-      })
+    })
 };
 
 // Initialize function
