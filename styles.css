@@ -176,6 +176,7 @@ ul li {
     cursor: pointer;
 }
 
+li:hover,
 li:active,
 li:focus {
     background-color: #3C1642;
