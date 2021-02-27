@@ -104,6 +104,7 @@ flavourTown.displayDescription = (clickResults) => {
         strainDesc.textContent = `Oh No! No description available. Looks like you'll need to smoke it and find out`;
     }
     document.querySelector('.descHolder').appendChild(strainDesc);
+    document.querySelector('.descSection').scrollIntoView({behavior: 'smooth'});
 }
 
 // Function to capture user click action on page
