@@ -22,13 +22,10 @@ flavourTown.displayStrains = (jsonResults) => {
   const randomResults = jsonResults.sort(() => 0.5 - Math.random());
   const sliceResults = randomResults.slice(0,15);
   sliceResults.forEach(item => {
-      // Create button element to store title & race
       const btnEl = document.createElement('button');
-      btnEl.classList.add('btn');
-      // Create h4 to hold title 
+      btnEl.classList.add('btn'); 
       const strainTitle = document.createElement('h4');
       strainTitle.textContent = item.name;
-      // Create p to hold race
       const race = document.createElement('p');
       race.textContent = item.race;
       document.querySelector('.strainGrid').appendChild(btnEl);
@@ -50,7 +47,7 @@ flavourTown.getSelectedValue = () => {
         event.preventDefault();
         document.querySelector('.resultSection').classList.add('showSection');
         flavourTown.getStrains(selection.value);
-        // We used inline styles here to alter the embedded GIPHY code for a consistent GIF height, which required a background image
+        // We used inline styles here to alter the embedded GIPHY code for a consistent GIF height, which required placing the URL as a background image
         if (selection.value === 'sweet') {
             const gifHolder = document.querySelector('.gifHolder');
             gifHolder.innerHTML = `<div style="background-image: url('https://media.giphy.com/media/sPj7I5949U2oo/giphy.gif'); height: 600px; background-size: cover; background-position: center;"></div>`;
@@ -87,7 +84,6 @@ flavourTown.getDescriptions = (description) => {
             return response.json();
         })
             .then((jsonResponse) => {
-                // console.log(jsonResponse[0].desc);
                 flavourTown.displayDescription(jsonResponse[0].desc);
             }).catch (() => {
                 alert('Oops, we must be out smoking. Come back later!');
@@ -101,7 +97,7 @@ flavourTown.displayDescription = (clickResults) => {
     const strainDesc = document.createElement('p');
     strainDesc.textContent = clickResults;
     if (strainDesc.textContent == ""){
-        strainDesc.textContent = `Oh No! No description available. Looks like you'll need to smoke it and find out`;
+        strainDesc.textContent = `Oh No! No description available. Looks like you'll need to smoke it and find out.`;
     }
     document.querySelector('.descHolder').appendChild(strainDesc);
     document.querySelector('.descSection').scrollIntoView({behavior: 'smooth'});
@@ -109,10 +105,10 @@ flavourTown.displayDescription = (clickResults) => {
 
 // Function to capture user click action on page
 flavourTown.getClick = () => {
-  // Create an event listener on the div (which exists on the page) to watch for click
+  // Event listener on the div to watch for click
   const selectedTitle = document.querySelector('.strainGrid');
   selectedTitle.addEventListener('click', function(event) {
-      // If statement - if clicking on div, h4, p - then get the text
+      // If clicking on either the button, h4, p - then get the text
       // Use that value to query the new API for the correct description
       if (event.target.tagName === 'BUTTON') {
           const btnClick = event.target.childNodes[0].innerText;
