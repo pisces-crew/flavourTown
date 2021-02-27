@@ -78,7 +78,7 @@ header {
     margin-top: 4rem;
 }
 
-button {
+button[type='submit'] {
     font-family: inherit;
     background-color: #3C1642;
     border-radius: 5px;
@@ -87,6 +87,7 @@ button {
     color: white;
     text-transform: capitalize;
     padding: 1rem 1.5rem;
+    cursor: pointer;
 }
 
 .headerContainer a:hover,
@@ -135,7 +136,6 @@ select:hover {
     background-size: 7%;
 }
 
-
 /* RESULT SECTION STYLES */
 
 .resultSection {
@@ -155,41 +155,42 @@ select:hover {
     width: 100%;
 }
 
-ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 2rem;
-    list-style: none;
-    padding: 0;
+.strainGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  list-style: none;
+  margin-top: 4rem;
+  padding: 0;
 }
 
-ul li {
-    background: #F9F0FA;
-    box-shadow: 6px 6px #3C1642;
-    border: 1px solid #3C1642;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    text-transform: capitalize;
-    padding: 2rem;
-    cursor: pointer;
+.strainGrid button {
+  font-family: inherit;
+  color: inherit;
+  background: #F9F0FA;
+  box-shadow: 6px 6px #3C1642;
+  border: 1px solid #3C1642;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 2rem;
+  cursor: pointer;
 }
 
-li:hover,
-li:active,
-li:focus {
+.strainGrid button:hover,
+.strainGrid button:focus {
     background-color: #3C1642;
     color: white;
     box-shadow: 6px 6px #333333;
 }
 
-
-/* .clicked {
+.strainGrid .active {
     background-color: #3C1642;
     color: white;
     box-shadow: 6px 6px #333333;
-} */
+}
 
 .instructions h3 {
     margin: 4rem 0;
