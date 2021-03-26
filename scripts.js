@@ -141,6 +141,7 @@ flavourTown.activeState = () => {
 flavourTown.init = () => {
     flavourTown.getSelectedValue();
     flavourTown.getClick();
+    alert("The FlavourTown API is currently down. 😢 We're working on it, check back later!");
 };
 
 // Run initialize function
